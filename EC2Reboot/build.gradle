@@ -1,0 +1,20 @@
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'maven'
+apply plugin: 'eclipse'
+
+mainClassName = 'main.java.EC2Reboot.RebootInstance'
+
+repositories {
+    jcenter()
+    mavenLocal()
+    mavenCentral()
+    maven { url 'https://plugins.gradle.org/m2/' }
+}
+
+dependencies {
+    compile 'com.amazonaws:aws-java-sdk:1.9.6'
+    implementation platform('com.amazonaws:aws-java-sdk-bom:1.11.228')
+    compile 'com.amazonaws:aws-java-sdk-ec2:1.11.245'
+    testImplementation 'junit:junit:4.12'
+}
